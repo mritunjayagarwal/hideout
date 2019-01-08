@@ -1,0 +1,46 @@
+{
+  "name": "hideout",
+  "version": "1.0.0",
+  "description": "A News Network For the School",
+  "main": "index.js",
+  "engine": {
+    "node": "7.10.1",
+    "npm": "4.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mritunjayagarwal/hideout.git"
+  },
+  "author": "Golden Jaguar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mritunjayagarwal/hideout/issues"
+  },
+  "homepage": "https://github.com/mritunjayagarwal/hideout#readme",
+  "dependencies": {
+    "async": "^2.6.1",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "connect-mongo": "^2.0.3",
+    "cookie-parser": "^1.4.3",
+    "dependable": "^1.1.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-flash": "0.0.2",
+    "express-promise-router": "^3.0.3",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.3.1",
+    "helmet": "^3.15.0",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.4.2",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "socket.io": "^2.2.0"
+  }
+}
