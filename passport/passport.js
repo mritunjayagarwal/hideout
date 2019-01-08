@@ -31,13 +31,15 @@ passport.use('login', new LocalStrategy({
             done(null, user);
         }
 
-        const newUser = new User();
-        newUser.username = req.body.username;
-        newUser.fullname = req.body.fullname;
-        newUser.email = req.body.fullname;
-        newUser.password = newUser.encryptPassword(req.body.password);
-        newUser.save(function(err){
-            done(err, newUser)
-        })
+        if(!user){
+            const newUser = new User();
+            newUser.username = req.body.username;
+            newUser.fullname = req.body.fullname;
+            newUser.email = req.body.fullname;
+            newUser.password = newUser.encryptPassword(req.body.password);
+            newUser.save(function(err){
+                done(err, newUser)
+            })
+        }
     })
 }))
