@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A News Network For the School",
   "main": "index.js",
-  "engine": {
+  "engines": {
     "node": "7.10.1",
     "npm": "4.6.1"
   },
