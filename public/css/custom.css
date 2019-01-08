@@ -248,7 +248,6 @@ body{
      margin-bottom: -300px;
      border:1.3px solid #d3d3d3;
      overflow: auto;
-     border-bottom: none;
  }
 
  .bottom-left{
@@ -279,7 +278,6 @@ body{
     position:fixed;
     bottom:15px;
     left:8px;
-    border-top: none;
  }
 
  .search{
