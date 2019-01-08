@@ -23,8 +23,10 @@ passport.use('login', new LocalStrategy({
             return done(null, false, req.flash('error', 'Weak Connectivity'));
         }
 
-        if(user && user.compare(password)){
-            done(null, user);
+        if(!user || !user.compare(password)){
+           console.log('Bad kitty');
+        }else{
+            done(err, user);
         }
 
         const newUser = new User();
