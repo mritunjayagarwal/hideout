@@ -23,9 +23,11 @@ passport.use('login', new LocalStrategy({
             return done(null, false, req.flash('error', 'Weak Connectivity'));
         }
 
-        if(!user || !user.compare(password)){
-           console.log('Bad kitty');
-        }else{
+        if(user){
+            if(!user.compare(password)){
+                return done(null, false, req.flash('error', 'Password is Incorrect'));
+            }
+
             done(null, user);
         }
 
