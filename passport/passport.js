@@ -24,7 +24,9 @@ passport.use('login', new LocalStrategy({
         }
 
         if(user){
-            return done(err, user)
+            if(user && user.compare(password)){
+                done(null, user);
+            }
         }
 
         const newUser = new User();
