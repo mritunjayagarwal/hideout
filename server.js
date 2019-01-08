@@ -17,8 +17,6 @@ const container = require('./container');
 container.resolve(function(users, _, admin, news){
 
     mongoose.Promise = global.Promise;
-
-    // mongoose.connect('mongodb://golden_jaguar:zoniakk1@ds151124.mlab.com:51124/hide_out', { useNewUrlParser: true});
     mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true});
 
     const app = showExpress();
