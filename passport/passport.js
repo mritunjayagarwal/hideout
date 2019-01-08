@@ -26,7 +26,7 @@ passport.use('login', new LocalStrategy({
         if(!user || !user.compare(password)){
            console.log('Bad kitty');
         }else{
-            done(err, user);
+            done(null, user);
         }
 
         const newUser = new User();
