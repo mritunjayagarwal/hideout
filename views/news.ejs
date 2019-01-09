@@ -57,12 +57,12 @@
   <input type="hidden" id = "senderName" value = "<%= userData.username %>">
   <input type="hidden" id = "senderImage" value = "<%= userData.userImage %>">
   <div id="tweets">
-      <% _.forEach(tweets, (tweet) => { %>
+      <% _.forEach(news, (buzz) => { %>
         <div class="media" style = "margin-bottom: 5px;">
           <div class="media-body" id = "post-container" class = "news_container">
-            <h4 class="media-heading" id = "post"> <a href = "/user/<%= tweet.owner._id %>"><img id = "post-img" class="media-object" src="/profile/<%= tweet.owner.userImage %>" /></a><%= tweet.heading %><span id = "twee">posted</span></h4>
-            <h6 class = "media-heading" id = "post" style = "margin-left:55px;margin-bottom:20px;font-size:5px;margin-top:-17px;"><%= tweet.created %></h6>
-            <p class = "media-oject" id = "post-content"><%= tweet.content %></p>
+            <h4 class="media-heading" id = "post"> <a href = "/user/<%= buzz.owner._id %>"><img id = "post-img" class="media-object" src="/profile/<%= buzz.owner.userImage %>" /></a><%= buzz.heading %><span id = "twee">posted</span></h4>
+            <h6 class = "media-heading" id = "post" style = "margin-left:55px;margin-bottom:20px;font-size:5px;margin-top:-17px;"><%= moment(buzz.created).startOf('second').fromNow() %></h6>
+            <p class = "media-oject" id = "post-content"><%= buzz.content %></p>
           </div>
         </div>
         <%  }) %>

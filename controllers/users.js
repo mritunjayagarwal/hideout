@@ -1,5 +1,5 @@
 
-module.exports = function(_, passport, async, Tweet, User){
+module.exports = function(_, passport, async, Tweet, User, moment){
     return {
         SetRouting: function(router){
             router.get('/', this.indexPage);
@@ -16,7 +16,6 @@ module.exports = function(_, passport, async, Tweet, User){
         indexPage: function(req, res){
             if(req.user){
                 const userData = req.user;
-            console.log(userData);
 
             async.parallel([
                 function(callback){
@@ -26,11 +25,19 @@ module.exports = function(_, passport, async, Tweet, User){
                         .exec((err,tweets) => {
                             callback(err, tweets)
                         })
+                },
+                function(callback){
+                    User.find({})
+                        .sort('-_id')
+                        .populate('owner')
+                        .exec((err,users) => {
+                            callback(err, users)
+                        })
                 }
             ], (err, results) => {
                 var result1 = results[0];
-                console.log(result1);
-                res.render('home', {userData: userData, tweets: result1});
+                var result2 = results[1];
+                res.render('home', {userData: userData, tweets: result1,users: result2, moment: moment});
             })
           }else{
                 res.render('index');
@@ -38,7 +45,6 @@ module.exports = function(_, passport, async, Tweet, User){
         },
         homePage: function(req, res){
             const userData = req.user;
-            console.log(userData);
 
             async.parallel([
                 function(callback){
@@ -51,8 +57,7 @@ module.exports = function(_, passport, async, Tweet, User){
                 }
             ], (err, results) => {
                 var result1 = results[0];
-                console.log(result1);
-                res.render('home', {userData: userData, tweets: result1});
+                res.render('home', {userData: userData, tweets: result1, moment: moment });
             })
         },
         createUser: passport.authenticate('login', {

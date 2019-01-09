@@ -6,7 +6,9 @@ const myModules = [
     ['passport', 'passport'],
     ['async', 'async'],
     ['Tweet', './models/tweet'],
-    ['User', './models/user']
+    ['User', './models/user'],
+    ['moment', 'moment'],
+    ['News', './models/news']
 ];
 
 myModules.forEach(function(val){

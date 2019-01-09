@@ -9,7 +9,8 @@ module.exports = function(io){
         socket.on('tweet', (data, callback) => {
             io.emit('newTweet', {
                 tweet: data.tweet,
-                sender: data.sender
+                sender: data.sender,
+                image: data.senderImage
             });
             callback();
         })

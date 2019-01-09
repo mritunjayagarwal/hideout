@@ -62,8 +62,17 @@ body{
 #supporter{
     height:30px;
     width:100%;
+    border: none;
+    outline:none;
     margin-bottom:-50px;
     border: 1px solid #d3d3d3;
+    font-family: coc;
+    background-color: #fff;
+    color: #007BFF;
+}
+
+#supporter:hover{
+    border:1px solid #005EA1;
 }
 
 #post-content{
@@ -246,7 +255,6 @@ body{
      margin-left: 8px;
      background-color:transparent;
      margin-bottom: -300px;
-     border:1.3px solid #d3d3d3;
      overflow: auto;
  }
 
@@ -293,7 +301,6 @@ body{
  .results{
      height:250px;
      background-color: #101010;
-     border: 1.3px solid #D3D3D3;
      position:fixed;
      right:8px;
      top:117px;
