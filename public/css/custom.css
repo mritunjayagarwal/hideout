@@ -438,7 +438,7 @@ body{
     border-bottom: 1px solid #005EA1;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1000px) {
     .results,#form-froup, #something, .bottom-right, .bottom-above {
       display:none;
     }
