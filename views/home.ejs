@@ -78,7 +78,7 @@
     <div class="media">
       <div class="media-body" id = "post-container">
         <h4 class="media-heading" id = "post"> <a href = "/user/<%= tweet.owner._id %>"><img id = "post-img" class="media-object" src="/profile/<%= tweet.owner.userImage %>" /></a><%= tweet.owner.username %><span id = "twee">posted</span></h4>
-        <h6 class = "media-heading" id = "post" style = "margin-left:55px;margin-bottom:20px;font-size:5px;margin-top:-17px;"><%= moment(tweet.created).startOf('second').fromNow() %></h6>
+        <h6 class = "media-heading" id = "date" style = "margin-left:55px;margin-bottom:20px;font-size:5px;margin-top:-17px;"><%= moment(tweet.created).startOf('second').fromNow() %></h6>
         <p class = "media-oject" id = "post-content"><%= tweet.content %></p>
       </div>
     </div>

@@ -59,6 +59,14 @@ body{
     margin-top:5px;
 }
 
+#date{
+    font-family:coc;
+    color: #005EA1;
+    font-size:15px;
+    margin-left:7px;
+    margin-top:5px;
+}
+
 #supporter{
     height:30px;
     width:100%;
@@ -91,10 +99,6 @@ body{
     padding-bottom:0px;
     background-color: #fff;
 }
-
-/* #tweets div:nth-child(even){
-    background-color: #fff;
-} */
 
 #post-img{
     margin-top:5px;
@@ -433,3 +437,28 @@ body{
 .news_container{
     border-bottom: 1px solid #005EA1;
 }
+
+@media only screen and (max-width: 600px) {
+    .results,#form-froup, #something, .bottom-right, .bottom-above {
+      display:none;
+    }
+    #post-container{
+        width:100%;
+    }
+    #post{
+        font-size: 9px;
+        margin-bottom:10px;
+    }
+    #post-img{
+        height:30px;
+        width:30px;
+        border:1px solid black;
+    }
+    #twee{
+        font-size:6px;
+    }
+    #container{
+        width: 90%;
+        margin-left:5%;
+    }
+  }
