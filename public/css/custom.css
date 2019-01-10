@@ -437,9 +437,27 @@ body{
 .news_container{
     border-bottom: 1px solid #005EA1;
 }
+#footer{
+    background-color: #007BFF;
+    width:100%;
+    position:fixed;
+    bottom:0px;
+    height:23px;
+}
+#right{
+    width:40%;
+    height:100%;
+    position:absolute;
+    right:0px;
+    font-family: coc;
+    color: #005EA1;
+    font-size:11px;
+    text-align: center;
+    background-color:#101010;
+}
 
 @media only screen and (max-width: 1000px) {
-    .results,#form-froup, #something, .bottom-right, .bottom-above, #quote{
+    .results,#form-froup, #something, .bottom-right, .bottom-above, #quote, #web{
       display:none;
     }
     #post-container{
@@ -476,5 +494,10 @@ body{
 
     .signup{
         margin-left:30.7%;
+    }
+
+    #right{
+        width:60%;
+        font-size:9px;   
     }
   }
