@@ -19,8 +19,8 @@ const { Users } = require('./helpers/UserClass');
 container.resolve(function(users, _, admin, news){
 
     mongoose.Promise = global.Promise;
-    // mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true});
-    mongoose.connect('mongodb://golden_jaguar:zoniakk1@ds151124.mlab.com:51124/hide_out', { useNewUrlParser: true});
+    mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true});
+    // mongoose.connect('mongodb://golden_jaguar:zoniakk1@ds151124.mlab.com:51124/hide_out', { useNewUrlParser: true});
 
     const app = showExpress();
 
@@ -66,8 +66,7 @@ container.resolve(function(users, _, admin, news){
         app.use(session({
             resave: true,
             saveUninitialized: true,
-            // secret: process.env.SECRET_KEY,
-            secret: 'This_is_a_secret',
+            secret: process.env.SECRET_KEY,
             store: new MongoStore({ mongooseConnection: mongoose.connection })
         }));
         app.use(flash());

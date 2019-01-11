@@ -70,7 +70,7 @@ module.exports = function(_, passport, async, Tweet, User, moment){
             })
         },
         createUser: passport.authenticate('login', {
-            successRedirect: '/news',
+            successRedirect: '/home',
             failureRedirect: '/',
             failureFlash: true
         }),
