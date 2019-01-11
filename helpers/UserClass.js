@@ -20,7 +20,7 @@ class Users{
     GetUser(id){
         var user = this.users.filter((userId) => {
             return userId.id == id;
-        });
+        })[0];
         return user;
     }
 

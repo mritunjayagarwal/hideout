@@ -28,7 +28,7 @@ module.exports = function(io, Users){
             callback();
         });
 
-        socket.on('disconnect', (user) => {
+        socket.on('disconnect', () => {
             var user = users.RemoveUser(socket.id);
             if(user){
                 io.to(user.room).emit('watching', users.GetUserData(user.room));
