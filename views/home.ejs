@@ -34,6 +34,7 @@
        </nav>
     <div class = "main">
       <input type = "hidden" id = "senderImage" value = "<%= userData.userImage %>">
+      <input type="hidden" id = "room" value = "home">
      <div id = "something">
     <h1 style = "text-align:center;font-family:coc;font-size:13px;padding-top:10px;color: #005ea1">You May Know...</h1>
     <% _.forEach(users, (user) => { %>   
@@ -85,7 +86,7 @@
     <%  }) %>
   </div>
   </div>
-    </div>
+    </div> 
    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src = "/socket.io/socket.io.js"></script>

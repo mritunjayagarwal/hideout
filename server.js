@@ -14,6 +14,7 @@ const compression = require('compression');
 const helmet = require('helmet'); 
 const container = require('./container');
 const moment = require('moment');
+const { Users } = require('./helpers/UserClass');
 
 container.resolve(function(users, _, admin, news){
 
@@ -30,7 +31,7 @@ container.resolve(function(users, _, admin, news){
 
         configureExpress(app);
 
-        require('./socket/tweet')(io);
+        require('./socket/tweet')(io, Users);
 
         server.listen(process.env.PORT || 8080, function(){
             console.log("Connected To HideOut");

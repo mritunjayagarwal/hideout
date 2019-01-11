@@ -54,10 +54,19 @@ module.exports = function(_, passport, async, Tweet, User, moment){
                         .exec((err,tweets) => {
                             callback(err, tweets)
                         })
+                },
+                function(callback){
+                    User.find({})
+                        .sort('-_id')
+                        .populate('owner')
+                        .exec((err,users) => {
+                            callback(err, users)
+                        })
                 }
             ], (err, results) => {
                 var result1 = results[0];
-                res.render('home', {userData: userData, tweets: result1, moment: moment });
+                var result2 = results[1];
+                res.render('home', {userData: userData, tweets: result1,users: result2, moment: moment });
             })
         },
         createUser: passport.authenticate('login', {

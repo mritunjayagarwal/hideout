@@ -3,10 +3,29 @@ $(document).ready(function(){
     var socket = io();
     var senderName = $('#senderName').val();
     var senderImage = $('#senderImage').val();
+    var room = $('#room').val();
 
     socket.on('connect', () => {
         console.log('User Connected');
+
+        var params = {
+            room: room,
+            name: senderName
+        }
+
+        socket.emit('join', params, function(){
+            console.log('Join Success');
+        })
     });
+
+    socket.on('watching', (users) => {
+        var ol = $('<ol><h5 style = "color:#fff;margin-bottom:30px;" >People Watching</h3></ol>');
+        for(var i = 0; i < users.length; i++){
+            ol.append('<p style = "color: #005ea1;font-family:coc;margin-bottom:-10px;;font-weight:bolder;font-size:10px;width:50%;">' + users[i] + '</p><img src = "https://www.clker.com/cliparts/c/7/U/N/A/T/green-dot-small.svg.med.png" style = "height:10px;width:10px;margin-left:90%;margin-top:-20px;">');
+        }
+
+        $('.bottom-above').html(ol);
+    })
 
     $('#sendTweet').on('click', function(e){
 
