@@ -11,7 +11,19 @@ const userSchema = mongoose.Schema({
     created: { type: Date, default: Date.now},
     tweets: [{
         tweet: { type: mongoose.Schema.Types.ObjectId, ref: 'Tweet'}
-    }]
+    }],
+    sentRequest:{
+        username: String
+    },
+    request:[{
+        userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+        username: { type: String, default: ''}
+    }],
+    friendList: [{
+        friendId: { type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+        friendName: { type: String, default: ''}
+    }],
+    totalRequests: { type: Number, default: 0}
 });
 
 userSchema.methods.encryptPassword = function(password){
